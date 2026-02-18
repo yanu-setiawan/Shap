@@ -1,17 +1,25 @@
 import React from "react";
-import Icons from "../global/icons";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col items-center justify-center border-t border-border pt-16 pb-8 px-6 lg:px-8 w-full max-w-6xl mx-auto lg:pt-32">
+    <footer className="flex flex-col items-center justify-center border-t border-border pt-5 pb-8 px-6 lg:px-8 w-full max-w-6xl mx-auto lg:pt-5">
       <div className="grid grid-cols-1 xl:grid-cols-3 xl:gap-8 w-full max-w-6xl mx-auto lg:pt-32 relative">
-        <div className="hidden lg:block absolute -top-1/3 -right-1/4 bg-primary w-72 h-72 rounded-full -z-10 blur-[14rem]"></div>
-        <div className="hidden lg:block absolute bottom-0 -left-1/4 bg-primary w-72 h-72 rounded-full -z-10 blur-[14rem]"></div>
+        <div className="hidden lg:block absolute -top-1/3 -right-1/4 bg-primary w-72 h-72 rounded-full blur-[14rem] z-0"></div>
+        <div className="hidden lg:block absolute bottom-0 -left-1/4 bg-primary w-72 h-72 rounded-full blur-[14rem] z-0"></div>
 
         <div className="flex flex-col items-start gap-3 justify-start md:max-w-[200px]">
           <div className="flex items-start">
-            <Icons.logo className="w-9 h-9" />
+            <Link href="/" className="flex items-center gap-2">
+              <Image
+                src="/icons/icon.png"
+                alt="✨"
+                width={32}
+                height={32}
+                className="w-16 h-16"
+              />
+            </Link>
           </div>
           <p className="text-muted-foreground  text-sm text-start ">
             Build beautiful,functional websites, without writing code

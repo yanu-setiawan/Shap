@@ -2,8 +2,8 @@ import { Metadata } from "next";
 
 export const SITE_CONFIG: Metadata = {
   title: {
-    default: "Shap - Personal Website",
-    template: "%s / Shap",
+    default: "Y - Personal Website",
+    template: "%s / Personal Website",
   },
   description:
     "This is a personal website optimized for best performance and SEO.",
@@ -16,7 +16,7 @@ export const SITE_CONFIG: Metadata = {
     ],
   },
   openGraph: {
-    title: "Shap - Personal Website",
+    title: "Y - Personal Website",
     description:
       "This is a personal website optimized for best performance and SEO.",
     images: [

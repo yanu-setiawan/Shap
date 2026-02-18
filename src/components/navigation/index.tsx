@@ -1,58 +1,57 @@
-import Link from "next/link";
-import React from "react";
-import Icons from "../global/icons";
-import { buttonVariants } from "../ui/button";
-import { currentUser } from "@clerk/nextjs/server";
-import { UserButton } from "@clerk/nextjs";
+"use client";
 
-const Navbar = async () => {
-  const user = await currentUser();
+import Link from "next/link";
+import Image from "next/image";
+import { useUser, UserButton } from "@clerk/nextjs";
+import { buttonVariants } from "../ui/button";
+
+const Navbar = () => {
+  const { isSignedIn } = useUser();
+
   return (
-    <header className="px-4 h-14 sticky top-0 inset-x-0 w-full bg-background/40 backdrop-blur-lg border-b border-border z-50">
+    <header className="max-w-4xl py-2 px-4 h-14 sticky top-10 inset-x-0 w-full bg-background/30 backdrop-blur-lg rounded-2xl border border-foreground/15 z-50">
       <div className="flex items-center justify-between h-full mx-auto md:max-w-screen-xl">
-        <div className="flex items-start">
-          <Link href={"/"} className="flex items-center gap-2">
-            <Icons.logo className="w-8 h-8" />
-            <span className="text-lg font-medium">Shap</span>
-          </Link>
-        </div>
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/icons/icon.png"
+            alt="✨"
+            width={32}
+            height={32}
+            className="w-12 h-12"
+          />
+        </Link>
+
+        {/* Nav Menu */}
         <nav className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
           <ul className="flex items-center justify-center gap-8">
             <li className="hover:text-foreground/80 text-sm">
-              <Link href={"#"}>Pricing</Link>
+              <Link href="#">About</Link>
             </li>
             <li className="hover:text-foreground/80 text-sm">
-              <Link href={"#"}>About</Link>
+              <Link href="#">Blog</Link>
             </li>
             <li className="hover:text-foreground/80 text-sm">
-              <Link href={"#"}>Feature</Link>
-            </li>
-            <li className="hover:text-foreground/80 text-sm">
-              <Link href={"#"}>Blog</Link>
+              <Link href="#">Projects</Link>
             </li>
           </ul>
         </nav>
+
+        {/* Auth Buttons */}
         <div className="flex items-center gap-4">
-          {user ? (
-            <UserButton />
+          {isSignedIn ? (
+            <UserButton afterSignOutUrl="/" />
           ) : (
-            <>
-              <Link
-                href={"sign-in"}
-                className={buttonVariants({ size: "sm", variant: "ghost" })}
-              >
-                Log In
-              </Link>
-              <Link
-                href={"sign-up"}
-                className={buttonVariants({
-                  size: "sm",
-                  className: "hidden md:flex",
-                })}
-              >
-                Start Free Trial
-              </Link>
-            </>
+            <Link
+              href="/sign-in"
+              className={buttonVariants({
+                size: "sm",
+                className: "hidden md:flex rounded-2xl px-4",
+                variant: "ghost",
+              })}
+            >
+              Login
+            </Link>
           )}
         </div>
       </div>

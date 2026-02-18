@@ -7,9 +7,9 @@ interface Props {
 
 const MarketingLayout = ({ children }: Props) => {
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className="flex flex-col items-center justify-center min-w-full mx-auto relative">
       <Navbar />
-      {children}
+      <div className="relative -top-14">{children}</div>
       <Footer />
     </div>
   );

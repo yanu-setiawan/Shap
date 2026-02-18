@@ -108,11 +108,34 @@
 }
 
 .card-mask {
-  background: radial-gradient(ellipse at center, rgba(0, 75, 224, 0.15), transparent);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 75, 224, 0.15),
+    transparent
+  );
 }
 
 .gradient {
-  background: conic-gradient(from 230.29deg at 51.63% 52.16%, rgb(36, 0, 255) 0deg, rgb(0, 135, 255) 67.5deg, rgb(108, 39, 157) 198.75deg, rgb(24, 38, 163) 251.25deg, rgb(54, 103, 196) 301.88deg, rgb(105, 30, 255) 360deg);
+  background: conic-gradient(
+    from 230.29deg at 51.63% 52.16%,
+    rgb(36, 0, 255) 0deg,
+    rgb(0, 135, 255) 67.5deg,
+    rgb(108, 39, 157) 198.75deg,
+    rgb(24, 38, 163) 251.25deg,
+    rgb(54, 103, 196) 301.88deg,
+    rgb(105, 30, 255) 360deg
+  );
+}
+.gradient-dark {
+  background: conic-gradient(
+    from 230.29deg at 51.63% 52.16%,
+    rgb(20, 0, 150) 0deg,
+    rgb(0, 90, 170) 67.5deg,
+    rgb(70, 25, 120) 198.75deg,
+    rgb(15, 25, 120) 251.25deg,
+    rgb(30, 70, 140) 301.88deg,
+    rgb(70, 20, 180) 360deg
+  );
 }
 
 .lamp {
