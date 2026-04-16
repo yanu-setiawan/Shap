@@ -4,6 +4,7 @@ import PageTitle from "@/components/hero/PageTitle";
 import React from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 
 const animation = {
   hide: {
@@ -42,6 +43,14 @@ const AboutMe = () => {
 
   return (
     <section className="w-full relative flex  flex-col max-w-4xl mx-auto pt-10  px-4 md:px-0">
+      <Image
+        src="/icons/gradient.png"
+        alt="Gradient Background"
+        width={100}
+        height={100}
+        className="hidden lg:block absolute -top-72  w-full h-[70%]"
+      />
+
       <PageTitle
         title={"About Me"}
         description="Hi! I'm Yanu, a passionate web development student creating innovative projects with HTML, CSS, and JavaScript. Explore my portfolio, skills, and journey in building user-friendly apps. Let's connect!"
@@ -85,12 +94,30 @@ const AboutMe = () => {
       </div>
 
       <div className="mb-10">
-        <h3 className="text-white text-xl font-bold mb-4">Social links</h3>
-        <ul className="space-y-3">
+        <motion.h3
+          className="text-white text-xl font-bold mb-4"
+          {...{
+            initial: animation.hide,
+            animate: animation.show,
+          }}
+        >
+          Social links
+        </motion.h3>
+        <motion.ul
+          className="space-y-3"
+          {...{
+            initial: animation.hide,
+            animate: animation.show,
+          }}
+        >
           {links.map((link) => (
-            <li
+            <motion.li
               key={link.name}
               className="flex items-center text-zinc-400 group"
+              {...{
+                initial: animation.hide,
+                animate: animation.show,
+              }}
             >
               <span className="w-1 h-1 bg-zinc-500 rounded-full mr-3"></span>
               <a
@@ -101,14 +128,75 @@ const AboutMe = () => {
               >
                 {link.name}
               </a>
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
       </div>
 
-      <div>
-        <h3 className="text-white text-xl font-bold mb-4">Logo</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <motion.div
+        className="mb-10"
+        initial={animation.hide}
+        animate={animation.show}
+      >
+        <motion.h3 className="text-white text-xl font-bold mb-4">
+          Inspiration
+        </motion.h3>
+
+        <motion.p className="text-muted-foreground leading-relaxed mb-6">
+          Here are some websites that inspired me a lot to build a fantastic
+          website.
+        </motion.p>
+
+        <motion.ul className="space-y-4">
+          <motion.li className="flex items-start text-zinc-400 group">
+            <span className="w-1.5 h-1.5 bg-zinc-600 rounded-full mt-2.5 mr-3 flex-shrink-0" />
+            <p>
+              <Link
+                href="https://www.figma.com/community/file/1266863403759514317/geist-ui-kit-for-figma"
+                target="_blank"
+                className="text-white font-semibold underline decoration-zinc-500 underline-offset-4 hover:decoration-white transition-colors cursor-pointer"
+              >
+                Eihab
+              </Link>{" "}
+              for the UI design inspiration{" "}
+              <span className="text-zinc-500 text-sm">(Figma)</span>
+            </p>
+          </motion.li>
+
+          <motion.li className="flex items-start text-zinc-400 group">
+            <span className="w-1.5 h-1.5 bg-zinc-600 rounded-full mt-2.5 mr-3 flex-shrink-0" />
+            <p>
+              <Link
+                href="https://nelsonlai.dev/"
+                target="_blank"
+                className="text-white font-semibold underline decoration-zinc-500 underline-offset-4 hover:decoration-white transition-colors cursor-pointer"
+              >
+                NeilsonLai
+              </Link>{" "}
+              for the Website inspiration{" "}
+              <span className="text-zinc-500 text-sm">(Website)</span>
+            </p>
+          </motion.li>
+        </motion.ul>
+      </motion.div>
+
+      <div className="mb-14">
+        <motion.h3
+          {...{
+            initial: animation.hide,
+            animate: animation.show,
+          }}
+          className="text-white text-xl font-bold mb-8"
+        >
+          Logo
+        </motion.h3>
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-4"
+          {...{
+            initial: animation.hide,
+            animate: animation.show,
+          }}
+        >
           <div className="bg-[#f1e9e9] rounded-xl aspect-video flex items-center justify-center p-8">
             <Image
               src="/icons/icon.png"
@@ -119,7 +207,7 @@ const AboutMe = () => {
             />
           </div>
 
-          <div className="bg-black rounded-xl aspect-video flex items-center justify-center p-8">
+          <div className="bg-black rounded-xl aspect-video flex items-center justify-center p-8 border border-zinc-600/70">
             <Image
               src="/icons/icon.png"
               alt="✨"
@@ -128,7 +216,7 @@ const AboutMe = () => {
               className="w-20 h-20"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

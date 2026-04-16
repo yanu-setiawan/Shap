@@ -43,7 +43,7 @@ const Hero = () => {
   useEffect(() => {
     const id = setInterval(
       () => setIndex((i) => (i + 1) % WORDS.length),
-      SPEED_SEC * 1000
+      SPEED_SEC * 1000,
     );
     return () => clearInterval(id);
   }, []);
@@ -53,7 +53,7 @@ const Hero = () => {
   return (
     <div className="my-16 space-y-6 relative w-full max-w-4xl">
       {/* subtle background glow like the example */}
-      <div className="pointer-events-none absolute -inset-x-10 -top-20 h-64 -z-10 bg-gradient-to-tr from-purple-900/25 via-fuchsia-900/15 to-orange-800/30 blur-3xl" />
+      <div className="pointer-events-none absolute -inset-x-10 -top-20 h-64 -z-10 bg-gradient-to-tr from-purple-900/15 via-fuchsia-900/5 to-orange-800/10 blur-3xl" />
 
       <div className="flex justify-between gap-8 w-full">
         {/* Left side text */}
@@ -126,7 +126,7 @@ const Hero = () => {
               lazy={false}
             />
           </div>
-          <div className="absolute inset-0 -z-10 bg-gradient-to-tl from-purple-800 to-orange-800 opacity-50 blur-2xl" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-tl from-purple-900 to-cyan-900-800 opacity-50 blur-2xl" />
         </motion.div>
       </div>
     </div>

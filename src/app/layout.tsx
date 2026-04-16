@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
+import { ThemeProvider } from "next-themes";
 import { SITE_CONFIG } from "@/config";
 
 const font = Inter({ subsets: ["latin"] });
@@ -19,12 +20,14 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background text-foreground antialiased max-w-full overflow-x-hidden",
-          font.className
+          font.className,
         )}
       >
-        <ClerkProvider appearance={{ baseTheme: dark }}>
-          {children}
-        </ClerkProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ClerkProvider appearance={{ baseTheme: dark }}>
+            {children}
+          </ClerkProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -83,14 +83,14 @@
 
 ::-webkit-scrollbar {
   width: 5px;
-  background-color: hsl(var(--background));
+  background-color: hsl(var(--border));
   border-radius: 8px;
   scrollbar-width: thin;
 }
 
 ::-webkit-scrollbar-thumb {
-  color: hsl(var(--primary));
-  background-color: hsl(var(--primary));
+  color: hsl(var(--border));
+  background-color: hsl(var(--border));
   border-radius: 8px;
 }
 
