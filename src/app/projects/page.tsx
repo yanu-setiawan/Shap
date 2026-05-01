@@ -54,6 +54,16 @@ const Projects = () => {
                   {design.date}
                 </span>
               </div>
+              <div className=" flex items-center gap-1 my-2">
+                {design?.techStack?.map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-xs bg-white/20 text-white px-2 py-1 rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
               <p className="text-sm text-gray-300 mb-4 line-clamp-2">
                 {design.description}
               </p>

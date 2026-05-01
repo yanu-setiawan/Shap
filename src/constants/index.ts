@@ -159,6 +159,7 @@ export const webDesigns = [
     id: 1,
     title: "Tixia - Travel Solution",
     slug: "tixia",
+    techStack: ["Next.js", "Hero.Ui", "TypeScript", "React Query", "Redux"],
     description:
       "Tixia is a comprehensive travel solution designed to simplify and enhance the travel experience for both travelers and service providers. It offers a wide range of features and services to make travel planning, booking, and management seamless and enjoyable.",
     date: "Aug 15, 2023",
@@ -169,6 +170,7 @@ export const webDesigns = [
     id: 2,
     title: "Erapet - Point of Sale System",
     slug: "erapet-pos",
+    techStack: ["React.js", "Hero.Ui", "TypeScript", "React Query", "Zustand"],
     description:
       "Erapet is a Point of Sale (POS) system designed to streamline retail operations, enhance customer experience, and provide comprehensive sales management solutions for businesses of all sizes.",
     date: "Jul 28, 2023",
@@ -179,6 +181,7 @@ export const webDesigns = [
     id: 3,
     title: "MES (Manufacturing Execution System)",
     slug: "mes",
+    techStack: ["React.js", "Hero.Ui", "TypeScript", "React Query", "Zustand"],
     description:
       "MES (Manufacturing Execution System) is a comprehensive software solution designed to optimize and streamline manufacturing processes. It provides real-time visibility into production activities, enabling manufacturers to improve efficiency, reduce costs, and enhance product quality.",
     date: "Sep 3, 2023",
@@ -189,6 +192,13 @@ export const webDesigns = [
     id: 4,
     title: "HRIS (Human Resource Information System)",
     slug: "hris",
+    techStack: [
+      "React.js",
+      "Hero.Ui",
+      "Tanstack Table",
+      "React Query",
+      "Zustand",
+    ],
     description:
       "A comprehensive Human Resource Information System designed to streamline HR operations and enhance employee management.",
 
@@ -200,6 +210,7 @@ export const webDesigns = [
     id: 5,
     title: "ERP (Enterprise Resource Planning)",
     slug: "erp",
+    techStack: ["React.js", "Hero.Ui", "TypeScript", "React Query", "Redux"],
     description:
       "A comprehensive Enterprise Resource Planning system designed to integrate and manage all aspects of a business.",
 
@@ -222,6 +233,7 @@ export const webDesigns = [
     id: 7,
     title: "SuperApps Government",
     slug: "superapps-gov",
+    techStack: ["React.js", "Hero.Ui", "TypeScript", "React Query", "Redux"],
     description:
       "A comprehensive government digital platform designed to streamline public services and enhance citizen engagement.",
 
@@ -233,6 +245,7 @@ export const webDesigns = [
     id: 8,
     title: "Landing Page",
     slug: "landing-page",
+    techStack: ["html", "css", "javascript"],
     description:
       "A comprehensive government digital platform designed to streamline public services and enhance citizen engagement.",
 
