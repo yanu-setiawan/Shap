@@ -1,12 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      'utfs.io',
-      'img.clerk.com',
-      'subdomain',
-    ],
+    domains: ["utfs.io", "img.clerk.com", "subdomain"],
   },
+  transpilePackages: ["framer-motion", "motion"],
   reactStrictMode: false,
 };
 

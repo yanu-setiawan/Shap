@@ -23,15 +23,9 @@ export default function RootLayout({
           font.className,
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={true}
-        >
-          <ClerkProvider appearance={{ baseTheme: dark }}>
-            {children}
-          </ClerkProvider>
-        </ThemeProvider>
+        <ClerkProvider appearance={{ baseTheme: dark }}>
+          {children}
+        </ClerkProvider>
       </body>
     </html>
   );

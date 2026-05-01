@@ -51,13 +51,13 @@ const Hero = () => {
   const word = WORDS[index];
 
   return (
-    <div className="my-16 space-y-6 relative w-full max-w-4xl">
+    <div className="my-16 space-y-6 relative w-full max-w-4xl pt-2">
       {/* subtle background glow like the example */}
       <div className="pointer-events-none absolute -inset-x-10 -top-20 h-64 -z-10 bg-gradient-to-tr from-purple-900/15 via-fuchsia-900/5 to-orange-800/10 blur-3xl" />
 
-      <div className="flex justify-between gap-8 w-full">
+      <div className="flex justify-between gap-5 w-full pr-4">
         {/* Left side text */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 pl-6">
           <h1 className="flex flex-col gap-2 text-3xl sm:text-3xl md:text-3xl font-extrabold tracking-tight leading-tight">
             {/* line 1 */}
             <motion.span
@@ -116,7 +116,7 @@ const Hero = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="bg-background/60 justify-center items-center rounded-full">
+          <div className="justify-center items-center rounded-full">
             <BlurImage
               src="/icons/icon.png"
               className="rounded-full"
@@ -126,7 +126,7 @@ const Hero = () => {
               lazy={false}
             />
           </div>
-          <div className="absolute inset-0 -z-10 bg-gradient-to-tl from-purple-900 to-cyan-900-800 opacity-50 blur-2xl" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-tl from-[#000] to-cyan-950 opacity-35 blur-2xl" />
         </motion.div>
       </div>
     </div>

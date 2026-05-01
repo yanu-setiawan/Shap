@@ -1,0 +1,18 @@
+import { Footer, Navbar } from "@/components";
+import React from "react";
+
+interface Props {
+  children: React.ReactNode;
+}
+
+const BlogLayout = ({ children }: Props) => {
+  return (
+    <div className="flex flex-col items-center justify-center min-w-full mx-auto relative">
+      <Navbar />
+      <div className="relative w-full">{children}</div>
+      <Footer />
+    </div>
+  );
+};
+
+export default BlogLayout;

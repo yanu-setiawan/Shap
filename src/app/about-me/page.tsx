@@ -5,6 +5,7 @@ import React from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { CustomLink } from "@/components/ui/link";
 
 const animation = {
   hide: {
@@ -16,23 +17,6 @@ const animation = {
     opacity: 1,
   },
 };
-
-const CustomLink = ({
-  children,
-  href,
-}: {
-  children: React.ReactNode;
-  href: string;
-}) => (
-  <a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-white font-semibold underline decoration-zinc-500 hover:decoration-white transition-colors"
-  >
-    {children}
-  </a>
-);
 
 const AboutMe = () => {
   const links = [

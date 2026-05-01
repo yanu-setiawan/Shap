@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useUser, UserButton } from "@clerk/nextjs";
 import { buttonVariants } from "../ui/button";
-import { ThemeToggle } from "../ui/theme-toggle";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
@@ -37,7 +36,9 @@ const Navbar = () => {
         <nav className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
           <ul className="flex items-center justify-center gap-8">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive =
+                pathname === link.href ||
+                (link.href !== "/" && pathname.startsWith(link.href));
 
               return (
                 <li key={link.href}>
@@ -59,7 +60,6 @@ const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-4">
-          <ThemeToggle />
           {isSignedIn ? (
             <UserButton afterSignOutUrl="/" />
           ) : (
