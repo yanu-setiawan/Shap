@@ -72,7 +72,7 @@ const HomePage = () => {
                       height={3975}
                       className="w-full h-full object-cover"
                       alt={"homepage.get-in-touch.image-alt"}
-                      imageClassName="min-h-[210px] rounded-md lg:rounded-xl"
+                      imageClassName="h-auto lg:min-h-[210px] rounded-md lg:rounded-xl"
                     />
                   </div>
 
